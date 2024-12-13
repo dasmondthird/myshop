@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Магазин одежды{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="{% url 'products:product_list' %}">Магазин одежды</a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="{% url 'products:product_list' %}">Каталог</a></li>
+                <!-- Другие пункты меню -->
+            </ul>
+        </nav>
+    </header>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+    <footer>
+        <p>&copy; {{ year }} Магазин одежды</p>
+    </footer>
+</body>
+</html>
